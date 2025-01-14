@@ -1,0 +1,6 @@
+openai
+speechrecognition~=3.13.0
+wikipedia
+pyaudio
+pyttsx3~=2.98
+vosk~=0.3.45
