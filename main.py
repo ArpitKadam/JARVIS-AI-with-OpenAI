@@ -4,10 +4,10 @@ import webbrowser
 import openai
 import pyttsx3
 import speech_recognition as sr
-from config import apikey
+from config import api_key
 
 # Set the OpenAI API key
-openai.api_key = apikey
+openai.api_key = api_key
 
 def ai(prompt):
     """Handles AI interactions for standalone queries."""
@@ -95,6 +95,7 @@ def takecommand():
             return None
 
 if __name__ == "__main__":
+    print("Hello, I am Jarvis AI. Nice to meet you!")
     say("Hello, I am Jarvis AI. Nice to meet you!")
     while True:
         text = takecommand()
@@ -117,9 +118,9 @@ if __name__ == "__main__":
                 break
 
         music_dir = [
-            ["happy", "C:\\Users\\Arpit Kadam\\PycharmProjects\\JarvisAI\\music\\happy day.mp3"],
-            ["mirzapur", "C:\\Users\\Arpit Kadam\\PycharmProjects\\JarvisAI\\music\\Mirzapur.mp3"],
-            ["singham", "C:\\Users\\Arpit Kadam\\PycharmProjects\\JarvisAI\\music\\Singham.mp3"]
+            ["happy", "C:\\Users\\Arpit Kadam\\PycharmProjects\\JARVIS-AI-with-OpenAI\\music\\happy day.mp3"],
+            ["mirzapur", "C:\\Users\\Arpit Kadam\\PycharmProjects\\JARVIS-AI-with-OpenAI\\music\\Mirzapur.mp3"],
+            ["singham", "C:\\Users\\Arpit Kadam\\PycharmProjects\\JARVIS-AI-with-OpenAI\\music\\Singham.mp3"]
         ]
         for music in music_dir:
             if f"play {music[0]} music".lower() in text.lower():
@@ -138,6 +139,8 @@ if __name__ == "__main__":
         elif "instagram" in text.lower():
             say("Opening Instagram...")
             os.startfile("C:\\Users\\Arpit Kadam\\Desktop\\Instagram.lnk")
+
+
 
         elif "ai" in text.lower():
             ai(prompt=text)
